@@ -1,12 +1,27 @@
 if __name__ == '__main__':
-    
-    L = []
-    n = int(input())
-    for i in range(n):
-        for j in range(2):
-            name = input()
-            score = float(input())
-            L.append([name, score])
-        if i == n-1 and j == 1:
+    students_data = []
+    scores = []
+    names = []
+    names_secondLow = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        students_data.append([name, score])
+        scores.append(score)
+        names.append(name)
+       
+    sorted_scores = sorted(scores)
+    second_low = 0.0;
+    n = len(scores);
+    for i in range (n):
+        if sorted_scores[i] > sorted_scores[0]:
+            second_low = sorted_scores[i]
             break
-    print(L)
+    ind = scores.index(second_low)
+  
+    for j in range(ind, n):
+        if scores[j] == second_low:
+            names_secondLow.append(names[j])   
+    
+    for k in range(len(sorted(names_secondLow))):
+        print(sorted(names_secondLow)[k])
