@@ -1,4 +1,4 @@
-def swap_case(s):
+
     list = []
     for i in range(len(s)):
         s_char = s[i]
