@@ -6,8 +6,7 @@ def count_substring(string, sub_string):
         i = res_string.find(sub_string)
         res_string = res_string[i+1: len(string)] 
         count = count+1 
-        #print(i)
-        print(res_string)
+
     return count
 
 if __name__ == '__main__':
